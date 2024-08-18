@@ -1,0 +1,16 @@
+string pangrams(string s) {
+    
+    string result = "pangram";
+    unordered_map<char, int> temp; 
+    
+    for (auto curr : s)
+    {
+        if (curr != ' ')
+            temp[tolower(curr)]++;
+    }
+    
+    if (temp.size() != 26)
+        result = "not pangram";
+
+    return result;
+}
